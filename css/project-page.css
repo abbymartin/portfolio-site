@@ -1,0 +1,10 @@
+#back-button {
+    padding: 30px;
+    width: 52px;
+    position: absolute;
+    top: 0;
+}
+
+.main-content {
+    margin-top: 80px;
+}
