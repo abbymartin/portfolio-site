@@ -17,66 +17,104 @@
 </head>
 
 <body>
-    <div class = "main-content">
-        <section class = "section">
+    <div class="main-content">
+        <section class="section">
             <h1>Hello!</h1>
-            <p>I'm Abby Martin, a second-year computer science student at Georgia Tech with concentrations in <span class="text-highlight">Systems & Architecture</span> and <span class="text-highlight">Devices</span>. I'm interested in computer architecture, embedded systems, and robotics!</p>
-            <p><a href="https://github.com/abbymartin" class="inline-link" target="_blank">[GitHub]</a> <a href = "https://www.linkedin.com/in/abbyvmartin/" class="inline-link" target="_blank">[LinkedIn]</a></p>
+            <p>I'm Abby Martin, a computer science student at Georgia Institute of Technology with concentrations in <span class="text-highlight">Systems & Architecture</span> and <span class="text-highlight">Devices</span> (Graduating in <strong>Spring 2026</strong>). I'm interested in computer architecture, embedded systems, and robotics!</p>
+            <p><a href="https://github.com/abbymartin" class="inline-link" target="_blank">[GitHub]</a> <a href="https://www.linkedin.com/in/abbyvmartin/" class="inline-link" target="_blank">[LinkedIn]</a></p>
         </section>
 
-        <section class = "section">
+        <section class="section">
+            <h1>Experience</h1>
+
+            <h2><a href="https://vip.gatech.edu/teams/vwn" target="_blank" class="title-link">The Robot Collective</a></h2>
+            <h3>Undergraduate Research</h3>
+            <p>August 2024-Present</p>
+            <ul>
+                <li>Develop ground robot for Georgia Tech's <a href="https://www.robotarium.gatech.edu/" class="inline-link" target="_blank">Robotarium</a>, a remote-access swarm robotics lab with 2,000+ users</li>
+                <li>Migrate software to ROS 2 and improve camera & sensor integration</li>
+            </ul>
+
+            <h2><a href="https://hive.ece.gatech.edu/" target="_blank" class="title-link">The Hive Makerspace</a></h2>
+            <h3>Director of Communications and Peer Instructor</h3>
+            <p>January 2024-Present</p>
+            <ul>
+                <li>Assist students with 3D printing, laser cutting, and electronic prototyping at Georgia Tech's ECE makerspace</li>
+                <li>Manage internal communication with makerspace staff and external newsletter with over 1,900 subscribers</li>
+            </ul>
+
+            <h2><a href="https://hytechracing.gatech.edu/" target="_blank" class="title-link">HyTech Racing</a></h2>
+            <h3>Software and Firmware Developer</h3>
+            <p>August 2023-Present</p>
+            <ul>
+                <li>Program, document, and test vehicle firmware using C++ and PlatformIO</li>
+                <li>Built data acquisition tools using time series database InfluxDB and MQTT</li>
+            </ul>
+
+            <h2><a href="https://www.janelia.org/" target="_blank" class="title-link">Howard Hughes Medical Institute: Janelia Research Campus</a></h2>
+            <h3>Research Intern at the Dennis Lab</h3>
+            <p>June-August 2023</p>
+            <ul>
+                <li>Trained deep convolutional neural networks to track and analyze animals in videos for behavioral research in
+                    collaboration with Princeton University's Stony Ford Research Station</li>
+                <li>Designed and programmed all-terrain robot for RFID data collection and field research with Arduino and C++</li>
+            </ul>
+        </section>
+
+        <section class="section" id="projects">
             <h1>Projects</h1>
             <p>Click on any project to learn more about it!</p>
 
             <!-- one row of three projects -->
-            <div class = "project-row">
-                <div class = "project-card">
-                <a href="projects/breadboard.html">
+            <div class="project-row">
+                <div class="project-card">
+                <a href="projects/breadboard.html" class="title-link">
                     <h2>Breadboard Bakery</h2>
-                    <img src = "images/breadboard1.jpg" class = "card-image"/>
+                    <img src="images/breadboard1.jpg" class="card-image"/>
                 </a>
                     <p>Take a photo of a breadboard with wired logic chips and generate a gate-level schematic. Created for HackGT 11.</p>
-                    <p><span class = "text-highlight">Built with: Python, OpenCV, React, Flask</span></p>
+                    <p><span class="text-highlight">Built with: Python, OpenCV, React, Flask</span></p>
                 </div>
 
-                <div class = "project-card">
-                <a href="projects/calendar.html">
+                <div class="project-card">
+                <a href="projects/calendar.html" class="title-link">
                     <img />
                     <h2>E-Ink Calendar</h2>
                 </a>
                     <p>Refurbished broken Kindle tablet display as to-do list with Google Calendar integration.</p>
-                    <p><span class = "text-highlight">Built with: C++, ESP-IDF, <a href="https://github.com/vroland/epdiy" class = "inline-link" target = "_blank">EPDiy</a></span></p>
+                    <p><span class="text-highlight">Built with: C++, ESP-IDF, <a href="https://github.com/vroland/epdiy" class="inline-link" target="_blank">EPDiy</a></span></p>
                 </div>
-    
-                <div class = "project-card">
-                <a href="projects/epicandcool.html">
+                
+                <div class="project-row">
+                    <div class="project-card">
+                    <a href="projects/f1sentiment.html" class="title-link">
+                        <h2>F1 Sentiment Championship</h2>
+                        <img src="images/f1thumbnail.png" class="card-image"/>
+                    </a>
+                        <p>Created for Hacklytics 2024.</p>
+                        <p><span class="text-highlight">Built with: Python, JavaScript, Natural Language Toolkit</span></p>
+                </div>
+
+
+        </section>
+
+        <section class="section">
+            <h1>In Progress</h1>
+            <p>Projects I am working on and things I am learning!</p>
+            <!-- in progress project-->
+            <div class="progress-project">
+                <a href="projects/epicandcool.html" class="title-link">
                     <img />
                     <h2>Rlly Epic and Cool</h2>
                 </a>
                     <p>E-commerce site for an independent designer.</p>
-                    <p><span class = "text-highlight">Built with: Next.js, TypeScript, PostgresSQL, Stripe API</span></p>
-                </div>
+                    <p><span class="text-highlight">Built with: Next.js, TypeScript, PostgresSQL, Stripe API</span></p>
             </div>
 
-            <div class = "project-row">
-                <div class = "project-card">
-                <a href="projects/f1sentiment.html">
-                    <h2>F1 Sentiment Championship</h2>
-                    <img src = "images/f1thumbnail.png" class = "card-image"/>
-                </a>
-                    <p>Created for Hacklytics 2024.</p>
-                    <p><span class = "text-highlight">Built with: Python, JavaScript, Natural Language Toolkit</span></p>
-                </div>
-            </div>
-
-        </section>
-
-        <section class = "section">
-            <h1>In Progress</h1>
             <h2>Learning Rust</h2>
-            <p></p>
-
-            <h2></h2>
+            <ul>
+                <li>rust</li>
+            </ul>
         </section>
 
         <p>:)</p>
