@@ -1,0 +1,71 @@
+/* Adds Windows 95 themed icons before headings */
+
+#top::before {
+    content: url("../images/icons/Star.png");
+    padding-right: 6px;
+    position: relative;
+    top: 5px;
+}
+
+#contact::before {
+    content: url("../images/icons/Info.png");
+    position: relative;
+    padding-right: 6px;
+    top: 10px;
+}
+
+#experience::before {
+    content: url("../images/icons/Computer.png");
+    padding-right: 6px;
+    position: relative;
+    top: 5px;
+}
+
+#robot-collective::before {
+    content: url("../images/icons/Game.png");
+    position: relative;
+    padding-right: 6px;
+    top: 6px;
+}
+
+#hive::before{
+    content: url("../images/icons/Chip.png");
+    position: relative;
+    padding-right: 6px;
+    top: 4px;
+}
+
+#hytech::before {
+    content: url("../images/icons/Housecar.png");
+    position: relative;
+    padding-right: 5px;
+    top: 6px;
+}
+
+#janelia::before {
+    content: url("../images/icons/Science.png");
+    position: relative;
+    padding-right: 5px;
+    top: 6px;
+}
+
+#proj::before {
+    content: url("../images/icons/Desktop.png");
+    position: relative;
+    padding-right: 6px;
+    top: 5px;
+}
+
+#progress::before {
+    content: url("../images/icons/Cursordrag.png");
+    position: relative;
+    padding-right: 6px;
+    top: 5px;
+}
+
+#end::before {
+    content: url("../images/icons/Bear.png");
+    position: relative;
+    padding-right: 6px;
+    top: 10px;
+}

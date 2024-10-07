@@ -1,11 +1,11 @@
 body {
-  background-color: #2f7065;
-  color: #f1f1f1;
+  background-color: #1b6b6b;
+  color: #ffffef;
   font-family: 'Geologica', Helvetica, Arial, sans-serif;
 }
 
-p, h3 {
-  color: #e0e0e0e5;
+p, h3, li {
+  color: #ffffead7;
 }
 
 a { 
@@ -14,7 +14,8 @@ a {
 } 
 
 h1 {
-  font-size: 2em
+  font-size: 2em;
+  text-shadow: 2px 2px 5px #0e4136;
 }
 
 h3 {
@@ -24,7 +25,8 @@ h3 {
 
 .main-content {
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
+  padding-bottom: 25px;
 }
 
 .section {

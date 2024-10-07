@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/icons.css" rel="stylesheet">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,23 +20,24 @@
 <body>
     <div class="main-content">
         <section class="section">
-            <h1>Hello!</h1>
+            <h1 id="top">Hello!</h1>
             <p>I'm Abby Martin, a computer science student at Georgia Institute of Technology with concentrations in <span class="text-highlight">Systems & Architecture</span> and <span class="text-highlight">Devices</span> (Graduating in <strong>Spring 2026</strong>). I'm interested in computer architecture, embedded systems, and robotics!</p>
-            <p><a href="https://github.com/abbymartin" class="inline-link" target="_blank">[GitHub]</a> <a href="https://www.linkedin.com/in/abbyvmartin/" class="inline-link" target="_blank">[LinkedIn]</a></p>
+            <p id="contact"><a href="https://github.com/abbymartin" class="inline-link" target="_blank">[GitHub]</a> <a href="https://www.linkedin.com/in/abbyvmartin/" class="inline-link" target="_blank">[LinkedIn]</a></p>
         </section>
 
         <section class="section">
-            <h1>Experience</h1>
+            <h1 id="experience">Experience</h1>
 
-            <h2><a href="https://vip.gatech.edu/teams/vwn" target="_blank" class="title-link">The Robot Collective</a></h2>
+            <h2 id="robot-collective"><a href="https://vip.gatech.edu/teams/vwn" target="_blank" class="title-link">The Robot Collective</a></h2>
             <h3>Undergraduate Research</h3>
             <p>August 2024-Present</p>
             <ul>
                 <li>Develop ground robot for Georgia Tech's <a href="https://www.robotarium.gatech.edu/" class="inline-link" target="_blank">Robotarium</a>, a remote-access swarm robotics lab with 2,000+ users</li>
                 <li>Migrate software to ROS 2 and improve camera & sensor integration</li>
             </ul>
+            
 
-            <h2><a href="https://hive.ece.gatech.edu/" target="_blank" class="title-link">The Hive Makerspace</a></h2>
+            <h2 id="hive"><a href="https://hive.ece.gatech.edu/" target="_blank" class="title-link">The Hive Makerspace</a></h2>
             <h3>Director of Communications and Peer Instructor</h3>
             <p>January 2024-Present</p>
             <ul>
@@ -43,26 +45,25 @@
                 <li>Manage internal communication with makerspace staff and external newsletter with over 1,900 subscribers</li>
             </ul>
 
-            <h2><a href="https://hytechracing.gatech.edu/" target="_blank" class="title-link">HyTech Racing</a></h2>
+            <h2 id="hytech"><a href="https://hytechracing.gatech.edu/" target="_blank" class="title-link">HyTech Racing</a></h2>
             <h3>Software and Firmware Developer</h3>
             <p>August 2023-Present</p>
             <ul>
-                <li>Program, document, and test vehicle firmware using C++ and PlatformIO</li>
+                <li>Program, document, and test vehicle firmware for <span class="text-highlight">Formula SAE</span> electric racecar using C++ and PlatformIO</li>
                 <li>Built data acquisition tools using time series database InfluxDB and MQTT</li>
             </ul>
 
-            <h2><a href="https://www.janelia.org/" target="_blank" class="title-link">Howard Hughes Medical Institute: Janelia Research Campus</a></h2>
+            <h2 id="janelia"><a href="https://www.janelia.org/" target="_blank" class="title-link">Howard Hughes Medical Institute: Janelia Research Campus</a></h2>
             <h3>Research Intern at the Dennis Lab</h3>
             <p>June-August 2023</p>
             <ul>
-                <li>Trained deep convolutional neural networks to track and analyze animals in videos for behavioral research in
-                    collaboration with Princeton University's Stony Ford Research Station</li>
+                <li>Trained deep convolutional neural networks to track and analyze animals. Used Python to process data and identify interactions between animals</li>
                 <li>Designed and programmed all-terrain robot for RFID data collection and field research with Arduino and C++</li>
             </ul>
         </section>
 
         <section class="section" id="projects">
-            <h1>Projects</h1>
+            <h1 id="proj">Projects</h1>
             <p>Click on any project to learn more about it!</p>
 
             <!-- one row of three projects -->
@@ -99,7 +100,7 @@
         </section>
 
         <section class="section">
-            <h1>In Progress</h1>
+            <h1 id="progress">In Progress</h1>
             <p>Projects I am working on and things I am learning!</p>
             <!-- in progress project-->
             <div class="progress-project">
@@ -117,7 +118,7 @@
             </ul>
         </section>
 
-        <p>:)</p>
+        <p id="end">Thanks for visiting!</p>
               
     </div>
 </body>
