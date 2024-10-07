@@ -36,14 +36,14 @@
 }
 
 #hytech::before {
-    content: url("../images/icons/Housecar.png");
+    content: url("../images/icons/Battery.png");
     position: relative;
     padding-right: 5px;
     top: 6px;
 }
 
 #janelia::before {
-    content: url("../images/icons/Science.png");
+    content: url("../images/icons/Search.png");
     position: relative;
     padding-right: 5px;
     top: 6px;
