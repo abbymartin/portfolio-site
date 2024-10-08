@@ -29,10 +29,10 @@
 }
 
 #hive::before{
-    content: url("../images/icons/Chip.png");
+    content: url("../images/icons/Chip2.png");
     position: relative;
     padding-right: 6px;
-    top: 4px;
+    top: 5px;
 }
 
 #hytech::before {
@@ -68,4 +68,11 @@
     position: relative;
     padding-right: 6px;
     top: 10px;
+}
+
+#breadboard-header::before {
+    content: url("../images/icons/Chip.png");
+    position: relative;
+    padding-right: 6px;
+    top: 4px;
 }
