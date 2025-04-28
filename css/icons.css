@@ -21,13 +21,6 @@
     top: 5px;
 }
 
-#robot-collective::before {
-    content: url("../images/icons/Game.png");
-    position: relative;
-    padding-right: 6px;
-    top: 6px;
-}
-
 #hive::before{
     content: url("../images/icons/Chip2.png");
     position: relative;
@@ -35,8 +28,15 @@
     top: 5px;
 }
 
-#hytech::before {
-    content: url("../images/icons/Battery.png");
+#splunk::before {
+    content: url("../images/icons/Folders.png");
+    position: relative;
+    padding-right: 5px;
+    top: 6px;
+}
+
+#ta::before {
+    content: url("../images/icons/Scope.png");
     position: relative;
     padding-right: 5px;
     top: 6px;

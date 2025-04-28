@@ -21,36 +21,36 @@
     <div class="main-content">
         <section class="section">
             <h1 id="top">Hello!</h1>
-            <p>I'm <strong>Abby Martin</strong> and I study computer science at Georgia Institute of Technology with concentrations in <span class="text-highlight">Systems & Architecture</span> and <span class="text-highlight">Devices</span> (Graduating in <strong>Spring 2026</strong>). I'm interested in computer architecture, embedded systems, and robotics!</p>
+            <p>I'm <strong>Abby Martin</strong> and I study computer science at Georgia Institute of Technology with concentrations in <span class="text-highlight">Systems & Architecture</span> and <span class="text-highlight">Devices</span> (Graduating in <strong>Spring 2026</strong>).</p>
+            <p>I'm interested in computer architecture, operating systems, and embedded systems! <strong class="text-highlight">Looking for Fall 2025 internship/co-op.</strong></p>
             <p id="contact"><a href="https://github.com/abbymartin" class="inline-link" target="_blank">[GitHub]</a> <a href="https://www.linkedin.com/in/abbyvmartin/" class="inline-link" target="_blank">[LinkedIn]</a></p>
         </section>
 
         <section class="section">
             <h1 id="experience">Experience</h1>
 
-            <h2 id="robot-collective"><a href="https://vip.gatech.edu/teams/vwn" target="_blank" class="title-link">The Robot Collective</a></h2>
-            <h3>Undergraduate Research</h3>
-            <p>August 2024-Present</p>
+            <h2 id="splunk">Splunk</h2>
+            <h3>Incoming Software Engineering Intern</h3>
+            <p>May 2025-August 2025</p>
             <ul>
-                <li>Develop ground robot for Georgia Tech's <a href="https://www.robotarium.gatech.edu/" class="inline-link" target="_blank">Robotarium</a>, a remote-access swarm robotics lab with 2,000+ users</li>
-                <li>Migrate software to ROS 2 and improve camera & sensor integration using <strong>Python, C++, and Docker</strong></li>
+                <li>Structured Storage Team - KV Store Infrastructure</li>
+                <li><strong>C++</strong></li>
+            </ul>
+
+            <h2 id="ta">Digital Design Lab (ECE 2031)</h2>
+            <h3>Teaching Assistant</h3>
+            <p>January 2025-April 2025</p>
+            <ul>
+                <li>TA for lab course on digital logic, FPGA/VHDL, and assembly programming</li>
             </ul>
             
-
             <h2 id="hive"><a href="https://hive.ece.gatech.edu/" target="_blank" class="title-link">The Hive Makerspace</a></h2>
-            <h3>Director of Communications and Peer Instructor</h3>
+            <h3>Director of Communications and Master Peer Instructor</h3>
             <p>January 2024-Present</p>
             <ul>
                 <li>Assist students with 3D printing, laser cutting, and electronic prototyping at Georgia Tech's ECE makerspace</li>
+                <li>Organize weekly technical workshops for 300+ students each semester</li>
                 <li>Manage internal communication with makerspace staff and external newsletter with over 1,900 subscribers</li>
-            </ul>
-
-            <h2 id="hytech"><a href="https://hytechracing.gatech.edu/" target="_blank" class="title-link">HyTech Racing</a></h2>
-            <h3>Software and Firmware Developer</h3>
-            <p>August 2023-Present</p>
-            <ul>
-                <li>Program, document, and test vehicle firmware for <strong>Formula SAE</strong> electric racecar using <strong>C++ and PlatformIO</strong></li>
-                <li>Built data acquisition tools using time series database InfluxDB and MQTT</li>
             </ul>
 
             <h2 id="janelia"><a href="https://www.janelia.org/" target="_blank" class="title-link">Howard Hughes Medical Institute: Janelia Research Campus</a></h2>
@@ -58,64 +58,111 @@
             <p>June-August 2023</p>
             <ul>
                 <li>Trained deep convolutional neural networks using DeepLabCut and Python to track and analyze animals in videos for behavioral research</li>
-                <li>Designed and programmed all-terrain robot for RFID data collection and field research with Arduino and C++</li>
+                <li>Designed and programmed all-terrain robot for RFID data collection and field research with <strong>Arduino and C++</strong></li>
             </ul>
         </section>
 
         <section class="section" id="projects">
             <h1 id="proj">Projects</h1>
-            <p>Click on any project to learn more about it!</p>
+
 
             <!-- one row of three projects -->
             <div class="project-row">
-                <div class="project-card">
-                <a href="projects/breadboard.html" class="title-link">
-                    <h2>Breadboard Bakery</h2>
-                    <img src="images/breadboard1.jpg" class="card-image"/>
-                </a>
-                    <p>Take a photo of a breadboard with wired logic chips and generate a gate-level schematic. Created for HackGT 11.</p>
-                    <p><span class="text-highlight">Built with: Python, OpenCV, React, Flask</span></p>
-                </div>
 
                 <div class="project-card">
-                <a href="projects/calendar.html" class="title-link">
+                <h2>E-Ink Dashboard</h2>
+                <a href="https://github.com/abbymartin/eink-dashboard" class="title-link" target="_blank">
+                    <p>Project Repo</p>
                     <img />
-                    <h2>E-Ink Calendar</h2>
                 </a>
-                    <p>Refurbished broken Kindle tablet display as to-do list with Google Calendar integration.</p>
-                    <p><span class="text-highlight">Built with: C++, ESP-IDF, <a href="https://github.com/vroland/epdiy" class="inline-link" target="_blank">EPDiy</a></span></p>
-                </div>
-                
-                <div class="project-row">
-                    <div class="project-card">
-                    <a href="projects/f1sentiment.html" class="title-link">
-                        <h2>F1 Sentiment Championship</h2>
-                        <img src="images/f1thumbnail.png" class="card-image"/>
-                    </a>
-                        <p>Created for Hacklytics 2024.</p>
-                        <p><span class="text-highlight">Built with: Python, JavaScript, Natural Language Toolkit</span></p>
+                    <p>Modded Kindle e-ink tablet</p>
+                    <p><span class="text-highlight">Built with: Python, Flask, Bash</p>
                 </div>
 
+                <div class="project-card">
+                    <h2>Xv6 Kernel Programming</h2>
+
+                    <p>Coursework for CS 3210: Design of Operating Systems at Georgia Tech. Developed features for Xv6, a Unix based operating system.</p>
+                    <p>Implemented copy-on-write forking, scheduling algorithms, kernel threading, and file system security</p>
+                    <p><span class="text-highlight">Built with: C, QEMU</span></p>
+                </div>
+
+                <div class="project-card">
+                    <h2>Breadboard Bakery</h2>
+                    <a href="https://github.com/andriawang6/breadboard-analyzer" class="title-link" target="_blank">
+                        <p>Project Repo</p>
+                        <img src="images/breadboard1.jpg" class="card-image"/>
+                    </a>
+                        <p>Take a photo of a breadboard with wired logic chips and generate a gate-level schematic. Created for HackGT 11.</p>
+                        <p><span class="text-highlight">Built with: Python, OpenCV, React, Flask</span></p>
+                </div>
+
+            </div>
+
+            <div class="project-row">
+                <div class="project-card">
+                <a href="https://vip.gatech.edu/teams/vwn" class="title-link" target="_blank">
+                    <h2>GTernal Robot</h2>
+                    <img src="images/gternal.png" class="card-image"/>
+                </a>
+                    <p>Helped develop ground robot for Georgia Tech's <a href="https://www.robotarium.gatech.edu/" class="inline-link" target="_blank">Robotarium</a>, a remote-access swarm robotics lab with 2,000+ users. Worked on migrating software to ROS 2 and improving sensor integration in firmware.</p>
+                    <p><span class="text-highlight">Built with: C++, Python, Raspberry Pi, Teensy</span></p>
+                </div>
+
+                <div class="project-card">
+                <h2>Bubble Turret</h2>
+                <a href="https://github.com/andriawang6/bubble-turret" class="title-link" target="_blank">
+                    <p>Project Repo</p>
+                    <img src="images/bubbleturret.jpg" class="card-image"/>
+                </a>
+                    <p>Prototype device for penguin enrichment at the Georgia Aquarium.</p>
+                    <p><span class="text-highlight">Built with: C++, Arduino, Python</span></p>
+                </div>
+
+                <div class="project-card">
+                <h2>F1 Sentiment Championship</h2>
+                <a href="https://github.com/abbymartin/F1-Sentiment-Championship" class="title-link" target="_blank">
+                    <p>Project Repo</p>
+                    <img src="images/f1thumbnail.png" class="card-image"/>
+                </a>
+                    <p>Social media sentiment analysis and visualization for Formula 1 drivers during 2024-25 season.</p>
+                    <p>Created for Hacklytics 2024.</p>
+                    <p><span class="text-highlight">Built with: Python, JavaScript, Natural Language Toolkit</span></p>
+                </div>
+            </div>
 
         </section>
 
         <section class="section">
             <h1 id="progress">In Progress</h1>
-            <p id="progress-p">Projects I am working on and things I am learning!</p>
-            <!-- in progress project-->
+            <p id="progress-p">Projects I am currently working on!</p>
+            <br/>
+            <div class="project-row">
+
             <div class="progress-project">
-                <a href="projects/epicandcool.html" class="title-link">
-                    <img />
-                    <h2>Rlly Epic and Cool</h2>
-                </a>
-                    <p>E-commerce site for an independent designer.</p>
-                    <p><span class="text-highlight">Built with: Next.js, TypeScript, PostgresSQL, Stripe API</span></p>
+            <h2>eBPF Network Dashboard</h2>
+            <a href="" class="title-link" target="_blank">
+                <p>Project Repo</p>
+                <img />
+                
+            </a>
+                <p>bla bla bla</p>
+                <p><span class="text-highlight">Built with: C(?)</p>
             </div>
 
-            <h2>Learning Rust</h2>
-            <ul>
-                <li>rust</li>
-            </ul>
+            <div class="progress-project">
+                <h2>Rust OS</h2>
+                <a href="" class="title-link" target="_blank">
+                    <p>Project Repo</p>
+                    <img />
+                    
+                </a>
+                    <p></p>
+                    <p><span class="text-highlight">Built with: Rust, Raspberry Pi</span></p>
+            </div>
+
+            </div>
+
         </section>
 
         <p id="end">Thanks for visiting!</p>

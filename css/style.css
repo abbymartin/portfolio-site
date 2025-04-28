@@ -1,5 +1,5 @@
 body {
-  background-color: #1b6b6b;
+  background-color: #398a75;
   color: #ffffef;
   font-family: 'Geologica', Helvetica, Arial, sans-serif;
 }
@@ -36,7 +36,7 @@ h3 {
 }
 
 .text-highlight {
-  background-color: #0e4136;
+  background-color: #1a584b;
   padding-left: 2px;
   padding-right: 2px;
 }
@@ -58,6 +58,7 @@ h3 {
   clear: both;
 }
 
+
 /* Style the counter cards */
 .project-card {
   padding: 3px;
@@ -73,9 +74,20 @@ h3 {
   }
 }
 
+
+
+/* Content fill width on small screens */
+@media (max-width: 600px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
 .progress-project {
   margin-top: -25px;
   padding-bottom: 10px;
+  display: block;
+  text-align: center;
 }
 
 .card-image {
@@ -89,4 +101,9 @@ h3 {
 
 .title-link:hover {
   text-decoration: underline;
+}
+
+.title-link p {
+  margin-top: -10px;
+  font-size: 1.2em;
 }
