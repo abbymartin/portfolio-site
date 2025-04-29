@@ -45,7 +45,8 @@ h3 {
 .project-card {
   float: left;
   width: 32%;
-  padding: 0 5px;
+  padding: 3px;
+  text-align: center;
 }
 
 /* Remove extra left and right margins, due to padding in columns */
@@ -59,12 +60,6 @@ h3 {
 }
 
 
-/* Style the counter cards */
-.project-card {
-  padding: 3px;
-  text-align: center;
-}
-
 /* Responsive columns - one column layout (vertical) on small screens */
 @media  (max-width: 1100px) {
   .project-card {
@@ -72,8 +67,8 @@ h3 {
     display: block;
     margin-bottom: 20px;
   }
-}
 
+}
 
 
 /* Content fill width on small screens */
@@ -86,9 +81,21 @@ h3 {
 .progress-project {
   margin-top: -25px;
   padding-bottom: 10px;
-  display: block;
+  /* display: block; */
   text-align: center;
+  width: 50%;
+  float: left;
 }
+
+@media  (max-width: 1100px) {
+  .progress-project {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+}
+
 
 .card-image {
   max-width: 80%;
