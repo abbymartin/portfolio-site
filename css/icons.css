@@ -36,7 +36,7 @@
 }
 
 #ta::before {
-    content: url("../images/icons/Scope.png");
+    content: url("../images/icons/Oscilloscope.png");
     position: relative;
     padding-right: 5px;
     top: 6px;
