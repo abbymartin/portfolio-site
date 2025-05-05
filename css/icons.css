@@ -14,6 +14,13 @@
     top: 10px;
 }
 
+#skills::before {
+    content: url("../images/icons/Hammer.png");
+    padding-right: 6px;
+    position: relative;
+    top: 5px;
+}
+
 #experience::before {
     content: url("../images/icons/Computer.png");
     padding-right: 6px;
