@@ -35,6 +35,13 @@
     top: 5px;
 }
 
+#bostonsci::before {
+    content: url("../images/icons/Science.png");
+    position: relative;
+    padding-right: 5px;
+    top: 6px;
+}
+
 #splunk::before {
     content: url("../images/icons/Folders.png");
     position: relative;
