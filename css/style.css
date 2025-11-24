@@ -1,5 +1,5 @@
 body {
-  background-color: #398a75;
+  background-color: #4c9193;
   color: #ffffef;
   font-family: 'Geologica', Helvetica, Arial, sans-serif;
 }
@@ -36,7 +36,7 @@ h3 {
 }
 
 .text-highlight {
-  background-color: #1a584b;
+  background-color: #1a5857;
   padding-left: 2px;
   padding-right: 2px;
 }
@@ -81,7 +81,6 @@ h3 {
 .progress-project {
   margin-top: -25px;
   padding-bottom: 10px;
-  /* display: block; */
   text-align: center;
   width: 50%;
   float: left;
