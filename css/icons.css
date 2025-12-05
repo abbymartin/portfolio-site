@@ -90,3 +90,10 @@
     padding-right: 6px;
     top: 4px;
 }
+
+#xwords::before {
+    content: url("../images/icons/Xword.png");
+    position: relative;
+    padding-right: 6px;
+    top: 7px;
+}
