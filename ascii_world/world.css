@@ -1,0 +1,141 @@
+/* ascii_world foundation
+   ----------------------------------------------------------------
+   The world is designed at a fixed width of 1440 units and scales
+   to the window width. One unit = 1px when the window is 1440 wide.
+   Every size below is written in units via var(--u).
+   ---------------------------------------------------------------- */
+
+:root {
+    --design-width: 1440;
+    --grain: 0.65;          /* film grain strength, 0 turns it off */
+    --ink: #f1ecc9;         /* default text colour */
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+html { background: #1b211c; }
+body { margin: 0; }
+
+/* links take the colour of the text around them, visited or not */
+a, a:visited { color: inherit; }
+
+/* ---------- world ---------- */
+
+.world {
+    position: relative;
+    container-type: inline-size;
+    overflow: clip;          /* hides things drifting off the edges */
+    color: var(--ink);
+    font-family: "Fragment Mono", monospace;
+}
+
+/* one unit, usable by anything inside .world */
+.world * { --u: calc(100cqw / var(--design-width)); }
+
+/* ---------- backdrop: strips stacked top to bottom ----------
+   The strips set the height of the world.
+   <div class="strip" style="--h:900; background: ..."></div>   gradient
+   <img class="strip" src="..." width="1440" height="900">      image slice */
+
+.strip {
+    display: block;
+    width: 100%;
+    height: calc(var(--h) * var(--u));
+    background-size: 100% 100%;
+}
+img.strip { height: auto; }
+
+/* ---------- things: anything placed in the world ----------
+   style="--x:320; --y:1800"      top-left corner, in units from the world's top-left
+   optional: --w (width)  --size (font size)  --z (stacking order) */
+
+.thing {
+    position: absolute;
+    left: calc(var(--x) * var(--u));
+    top: calc(var(--y) * var(--u));
+    width: calc(var(--w) * var(--u));   /* ignored unless --w is set */
+    z-index: var(--z, 1);
+    margin: 0;
+    font-size: calc(var(--size, 16) * var(--u));
+    line-height: 1.1;
+    color: inherit;
+    text-decoration: none;
+}
+pre.thing, .thing pre { font-family: inherit; margin: 0; }
+
+/* ---------- groups: things inside a thing ----------
+   A thing inside another thing is placed from the outer thing's top-left,
+   so moving the outer --x/--y moves everything inside together.
+   These resets stop the inner thing inheriting the outer one's numbers;
+   its own style="--x:..; --y:.." still wins. */
+.thing > .thing { --x: 0; --y: 0; --w: initial; --z: initial; }
+img.thing { height: auto; }
+.pixel { image-rendering: pixelated; }
+a.thing, [data-click] { cursor: pointer; }
+
+/* ---------- frames: flipbook animation ----------
+   <div class="thing frames" data-fps="4" data-play="always|hover|none">
+       <pre>frame 1</pre><pre>frame 2</pre>
+   </div>
+   Frames share one cell so the element never changes size. */
+
+.frames { display: grid; align-items: end; justify-items: center; }
+.frames > * { grid-area: 1 / 1; visibility: hidden; }
+.frames > .on { visibility: visible; }
+
+/* ---------- drift: travel on a loop ----------
+   class="thing drift" style="--dx:1700; --dy:-80; --time:40s"
+   Moves from its placed position by (--dx, --dy) units, then restarts. */
+
+.drift { animation: drift var(--time, 40s) linear infinite; }
+@keyframes drift {
+    to { transform: translate(calc(var(--dx, 0) * var(--u)), calc(var(--dy, 0) * var(--u))); }
+}
+
+/* ---------- reveal: world.js adds .in-view while on screen ----------
+   data-reveal on a thing. Change this rule to change what "appearing" means. */
+
+[data-reveal] { opacity: 0; transition: opacity 0.6s; }
+[data-reveal].in-view { opacity: 1; }
+
+/* ---------- grain overlay ---------- */
+
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: var(--grain);
+    mix-blend-mode: overlay;
+    background-image: var(--noise);
+}
+
+/* ---------- grain on one element ----------
+   Images can't hold an overlay themselves, so wrap the image:
+   <div class="thing grainy" style="--x:560; --y:480; --w:375; --amount:0.6">
+       <img src="..." alt="...">
+   </div>
+   --amount is the strength (default 0.5), on top of the page-wide grain.
+   --scale is the speck size (default 1); 2 to 3 shows up better on small text. */
+
+.grainy { isolation: isolate; }
+.grainy > img { display: block; width: 100%; height: auto; }
+.grainy::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;           /* above everything inside the group, text included */
+    opacity: var(--amount, 0.5);
+    mix-blend-mode: var(--blend, overlay);
+    background-image: var(--noise);
+    /* --scale: 2 makes each speck twice as big, so grain shows on thin text strokes */
+    background-size: calc(220px * var(--scale, 1));
+    /* clip the grain to the image's own shape, so transparent areas stay clear */
+    -webkit-mask: var(--shape, none) center / 100% 100%;
+    mask: var(--shape, none) center / 100% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .drift { animation: none; }
+    [data-reveal] { transition: none; }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ascii world</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+    <link href="world.css" rel="stylesheet">
+</head>
+
+<!--
+    CHEAT SHEET
+    The world is 1440 units wide and scales to the window. All numbers are units.
+
+    place anything     class="thing" style="--x:320; --y:1800"
+    optional           --w:200 (width)   --size:24 (font size)   --z:5 (stacking)
+    text or image      <pre class="thing">, <img class="thing">, <a class="thing"> ...
+    link               <a class="thing" href="...">
+    click              data-click="name"  +  world.actions.name = el => { ... }
+    flipbook           class="thing frames" data-fps="4" data-play="always|hover|none"
+    appear on scroll   data-reveal
+    parallax           data-parallax="0.3"
+    drift              class="thing drift" style="--dx:1700; --dy:-80; --time:40s"
+    background         .strip elements inside .backdrop, each --h units tall
+    grain              --grain in world.css (0 = off)
+    grain on one image <div class="thing grainy" style="--x..; --w..; --amount:0.6"><img ...></div>
+                       add --shape:url(same.png) for cutouts so grain skips transparent areas
+                       --blend:soft-light / multiply ... changes how the grain mixes in (default overlay)
+    group              put things inside a thing: inner --x/--y count from the outer top-left,
+                       so moving the outer one moves them all
+-->
+
+<body>
+    <div class="grain"></div>
+
+    <main class="world">
+
+        <!-- backdrop: strips stack top to bottom and set the world's height -->
+        <div class="backdrop">
+            <img class="strip" src="images/water.png" width="1280" height="960" alt="">
+            <div class="strip" style="--h:900; background: linear-gradient(#3d516c, #34566d);"></div>
+            <div class="strip" style="--h:900; background: linear-gradient(#34566d, #a39f6b);"></div>
+            <div class="strip" style="--h:700; background: linear-gradient(#a39f6b, #2b3324);"></div>
+            <!-- an image slice instead:
+            <img class="strip" src="images/sky.jpg" width="1440" height="900" loading="lazy" alt=""> -->
+        </div>
+
+        <!-- plain text -->
+        <pre class="thing" style="--x:80; --y:80; --size:27; color:#414a75">
+<strong>abby martin</strong>
+<a href="https://github.com/abbymartin">github</a>
+<a href="https://www.linkedin.com/in/abbyvmartin/">linkedin</a>
+        </pre>
+
+        <!-- flipbook + drift: a bird crossing the sky -->
+        <!-- <div class="thing frames drift" data-fps="5" style="--x:-80; --y:300; --size:28; --dx:1600; --dy:-120; --time:30s">
+            <pre>\v/</pre>
+            <pre>-v-</pre>
+            <pre>/v\</pre>
+            <pre>-v-</pre>
+        </div> -->
+
+                <!-- group: move the heron, its ascii and its grain together with the outer --x/--y.
+                     The inner pre's --x/--y are measured from the group's top-left.
+                     grainy: grain over the whole group (text too); --shape keeps it off the transparent parts -->
+                <div class="thing grainy" data-parallax="0.12" style="--x:200; --y:320; --w:375; --z:1; --amount:0.6; --blend:multiply; --shape:url(images/heron1.png)">
+                    <img src="images/heron1.png" width="960" alt="flying heron">
+            <pre class="thing" style="--x:42; --y:64; --size:12.5; --z:2; color:#e1deff">
+
+                      +++++++= ----
+                 ++*+****++*=:--==
+            -==+++++  ++++
+          ==+=--=---=+*   
+          ----::::-----==    
+   :::-   :::::::::::----::-=+  
+                  ::::::----:--==  --
+             ..  :::::::- -::::-:::---
+              ..::.::::::     ---::::::-
+            ::: ..::: :::      -::::::::-\
+           (: ::::/ :--:       -:::::::-
+            ::::::  :---         -:-::--=
+            |::::   --::           -::-==
+            --::    -:::/            -: \ \
+             ::     :::                  \
+                   :::/
+                  :::
+</pre>
+                </div>
+
+                <!-- group: heron2 + its ascii + grain, moved together by the outer --x/--y -->
+                <div class="thing grainy" data-parallax="0.1" style="--x:880; --y:180; --w:320; --z:1; --amount:1; --blend:overlay; --shape:url(images/heron2.png)">
+                <img src="images/heron2.png" width="950" alt="flying heron">
+                <pre class="thing" style="--x:25; --y:65; --size:11; --z:2; color:#c5cff2">
+        ..
+                       ...-.
+           ..         ..-----..
+                    .----::::
+                  .-----:::::
+                 -:::-:::::::
+         --... .----::::::::
+        -----------::::::::
+        :----------::::::
+       ----------- :::::
+      ---------
+      ..--.-.
+       .-
+                </pre>
+                </div>
+
+
+        <!-- reveal: fades in when it scrolls into view -->
+        <pre class="thing" data-reveal style="--x:160; --y:1250; --size:20">things can appear
+as you arrive</pre>
+
+
+        <!-- image + link: back to the main site -->
+        <a class="thing" href="../" style="--x:1180; --y:1380; --w:64" title="home">
+            <img class="pixel" src="../images/icons/Star.png" alt="home" style="width:100%">
+        </a>
+
+        <!-- click + flipbook: each click shows the next frame -->
+        <div class="thing frames" data-play="none" data-click="grow" style="--x:660; --y:2050; --size:26">
+<pre>
+  .
+  |
+ \|/</pre>
+<pre>
+  o
+  |
+ \|/
+  |</pre>
+<pre>
+ .-.-.
+( (@) )
+ '-|-'
+  \|/
+   |</pre>
+        </div>
+
+        <pre class="thing" style="--x:640; --y:2260; --size:14">click the flower</pre>
+
+    </main>
+
+    <script src="world.js"></script>
+    <script>
+        // your own click actions go here
+        world.actions.grow = el => world.next(el);
+    </script>
+</body>
+
+</html>
