@@ -32,7 +32,8 @@ a, a:visited { color: inherit; }
 }
 
 /* one unit, usable by anything inside .world */
-.world * { --u: calc(100cqw / var(--design-width)); }
+/* --v is the vertical unit: the same as --u, times --stretch (2 on phones, see below) */
+.world * { --u: calc(100cqw / var(--design-width)); --v: calc(var(--u) * var(--stretch, 1)); }
 
 /* ---------- backdrop: strips stacked top to bottom ----------
    The strips set the height of the world.
@@ -58,17 +59,19 @@ a, a:visited { color: inherit; }
     position: relative;     /* keeps later strips on top, image or gradient */
     z-index: var(--z, auto);
     width: 100%;
-    height: calc(var(--h) * var(--u));
-    margin-top: calc(var(--overlap, 0) * var(--u) * -1);
+    height: calc(var(--h) * var(--v));
+    margin-top: calc(var(--overlap, 0) * var(--v) * -1);
     background-size: 100% 100%;
     --fades: linear-gradient(transparent,
-        #000 calc(var(--fade-top, 0) * var(--u)),
-        #000 calc(100% - var(--fade-bottom, 0) * var(--u)),
+        #000 calc(var(--fade-top, 0) * var(--v)),
+        #000 calc(100% - var(--fade-bottom, 0) * var(--v)),
         transparent);
     -webkit-mask-image: var(--fades);
     mask-image: var(--fades);
 }
-img.strip { height: auto; }
+/* world.js sets an image strip's --h from its proportions; when stretched taller on
+   phones it fills the height and crops the sides instead of squashing */
+img.strip { height: calc(var(--h) * var(--v)); object-fit: cover; }
 
 /* ---------- things: anything placed in the world ----------
    style="--x:320; --y:1800"      top-left corner, in units from the world's top-left
@@ -77,7 +80,7 @@ img.strip { height: auto; }
 .thing {
     position: absolute;
     left: calc(var(--x) * var(--u));
-    top: calc(var(--y) * var(--u));
+    top: calc(var(--y) * var(--v));
     width: calc(var(--w) * var(--u));   /* ignored unless --w is set */
     z-index: var(--z, 1);
     margin: 0;
@@ -94,6 +97,8 @@ pre.thing, .thing pre { font-family: inherit; margin: 0; }
    These resets stop the inner thing inheriting the outer one's numbers;
    its own style="--x:..; --y:.." still wins. */
 .thing > .thing { --x: 0; --y: 0; --w: initial; --z: initial; --small-scale: initial; }
+/* inside a group nothing stretches, so ascii stays lined up with its image */
+.thing .thing { top: calc(var(--y) * var(--u)); }
 
 /* ---------- small screens ----------
    Everything scales down with the window. Two ways to push back on phones:
@@ -107,6 +112,10 @@ pre.thing, .thing pre { font-family: inherit; margin: 0; }
 .thing.text { font-size: max(calc(var(--size, 16) * var(--u)), var(--min, 14px)); }
 
 @media (max-width: 700px) {
+    /* phones: vertical spacing and strip heights x2, so scenes spread over more
+       scrolling instead of several transitions fitting on one screen.
+       Sizes of things and the layout inside groups don't change. 1 = off. */
+    :root { --stretch: 2; }
     .thing { scale: var(--small-scale, 1); }
 }
 img.thing { height: auto; }

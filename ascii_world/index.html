@@ -36,6 +36,8 @@
                        --blend:soft-light / multiply ... changes how the grain mixes in (default overlay)
     readable text      class="thing text" never goes below 14px (or --min:16px); not for ascii art
     bigger on phones   --small-scale:1.3 makes a thing (or a whole group) 30% bigger below 700px wide
+    taller on phones   --stretch in world.css (2): below 700px all --y, strip heights, overlaps
+                       and fades are doubled; things keep their size. Group ascii with its image.
     group              put things inside a thing: inner --x/--y count from the outer top-left,
                        so moving the outer one moves them all
 -->
@@ -56,8 +58,7 @@
         <pre class="thing text" style="--x:80; --y:80; --size:27; --min:18px; color:#414a75">
 <strong>abby martin</strong>
 <a href="https://github.com/abbymartin">github</a>
-<a href="https://www.linkedin.com/in/abbyvmartin/">linkedin</a>
-        </pre>
+<a href="https://www.linkedin.com/in/abbyvmartin/">linkedin</a></pre>
 
         <!-- flipbook + drift: a bird crossing the sky -->
         <!-- <div class="thing frames drift" data-fps="5" style="--x:-80; --y:300; --size:28; --dx:1600; --dy:-120; --time:30s">

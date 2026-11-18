@@ -38,6 +38,19 @@ for (const el of document.querySelectorAll('.frames')) {
     }
 }
 
+// ---------- image strips ----------
+// Gives each image strip its height in units (--h) from its own proportions, so
+// the phone stretch in world.css can make it taller. An --h you set yourself wins.
+const designWidth = +getComputedStyle(document.documentElement).getPropertyValue('--design-width');
+for (const img of document.querySelectorAll('img.strip')) {
+    if (img.style.getPropertyValue('--h')) continue;
+    const set = (w, h) => { if (w && h) img.style.setProperty('--h', h / w * designWidth); };
+    const w = +img.getAttribute('width'), h = +img.getAttribute('height');
+    if (w && h) set(w, h);
+    else if (img.complete) set(img.naturalWidth, img.naturalHeight);
+    else img.addEventListener('load', () => set(img.naturalWidth, img.naturalHeight), { once: true });
+}
+
 // ---------- reveal ----------
 // data-reveal: gets the class "in-view" while on screen. The look is in world.css.
 const watcher = new IntersectionObserver(entries => {
