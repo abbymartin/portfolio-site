@@ -28,10 +28,14 @@
     parallax           data-parallax="0.3"
     drift              class="thing drift" style="--dx:1700; --dy:-80; --time:40s"
     background         .strip elements inside .backdrop, each --h units tall
+                       --overlap:200 slides a strip up over the one above
+                       --fade-top:200 / --fade-bottom:200 blend its edges, --z:1 puts it on top
     grain              --grain in world.css (0 = off)
     grain on one image <div class="thing grainy" style="--x..; --w..; --amount:0.6"><img ...></div>
                        add --shape:url(same.png) for cutouts so grain skips transparent areas
                        --blend:soft-light / multiply ... changes how the grain mixes in (default overlay)
+    readable text      class="thing text" never goes below 14px (or --min:16px); not for ascii art
+    bigger on phones   --small-scale:1.3 makes a thing (or a whole group) 30% bigger below 700px wide
     group              put things inside a thing: inner --x/--y count from the outer top-left,
                        so moving the outer one moves them all
 -->
@@ -43,16 +47,13 @@
 
         <!-- backdrop: strips stack top to bottom and set the world's height -->
         <div class="backdrop">
-            <img class="strip" src="images/water.png" width="1280" height="960" alt="">
-            <div class="strip" style="--h:900; background: linear-gradient(#3d516c, #34566d);"></div>
-            <div class="strip" style="--h:900; background: linear-gradient(#34566d, #a39f6b);"></div>
-            <div class="strip" style="--h:700; background: linear-gradient(#a39f6b, #2b3324);"></div>
-            <!-- an image slice instead:
-            <img class="strip" src="images/sky.jpg" width="1440" height="900" loading="lazy" alt=""> -->
+            <img class="strip" src="images/water.png" width="1281" height="961" alt="blurry water background" style="--fade-bottom:289; --z:1">
+            <img class="strip" src="images/gradient1.png" width="1281" alt="" style="--overlap:289">
+            <div class="strip" style="--h:900; background: linear-gradient(#3f9fca, #4ea29a);"></div>
         </div>
 
         <!-- plain text -->
-        <pre class="thing" style="--x:80; --y:80; --size:27; color:#414a75">
+        <pre class="thing text" style="--x:80; --y:80; --size:27; --min:20px; color:#414a75">
 <strong>abby martin</strong>
 <a href="https://github.com/abbymartin">github</a>
 <a href="https://www.linkedin.com/in/abbyvmartin/">linkedin</a>
@@ -69,7 +70,7 @@
                 <!-- group: move the heron, its ascii and its grain together with the outer --x/--y.
                      The inner pre's --x/--y are measured from the group's top-left.
                      grainy: grain over the whole group (text too); --shape keeps it off the transparent parts -->
-                <div class="thing grainy" data-parallax="0.12" style="--x:200; --y:320; --w:375; --z:1; --amount:0.6; --blend:multiply; --shape:url(images/heron1.png)">
+                <div class="thing grainy" data-parallax="0.15" style="--x:200; --y:320; --w:375; --z:1; --amount:0.6; --blend:multiply; --shape:url(images/heron1.png)">
                     <img src="images/heron1.png" width="960" alt="flying heron">
             <pre class="thing" style="--x:42; --y:64; --size:12.5; --z:2; color:#e1deff">
 
@@ -78,7 +79,7 @@
             -==+++++  ++++
           ==+=--=---=+*   
           ----::::-----==    
-   :::-   :::::::::::----::-=+  
+          :::::::::::----::-=+  
                   ::::::----:--==  --
              ..  :::::::- -::::-:::---
               ..::.::::::     ---::::::-
@@ -94,7 +95,7 @@
                 </div>
 
                 <!-- group: heron2 + its ascii + grain, moved together by the outer --x/--y -->
-                <div class="thing grainy" data-parallax="0.1" style="--x:880; --y:180; --w:320; --z:1; --amount:1; --blend:overlay; --shape:url(images/heron2.png)">
+                <div class="thing grainy" data-parallax="0.1" style="--x:900; --y:180; --w:320; --z:1; --amount:1; --blend:overlay; --shape:url(images/heron2.png)">
                 <img src="images/heron2.png" width="950" alt="flying heron">
                 <pre class="thing" style="--x:25; --y:65; --size:11; --z:2; color:#c5cff2">
         ..
@@ -115,17 +116,17 @@
 
 
         <!-- reveal: fades in when it scrolls into view -->
-        <pre class="thing" data-reveal style="--x:160; --y:1250; --size:20">things can appear
-as you arrive</pre>
+        <!-- <pre class="thing text" data-reveal style="--x:160; --y:1250; --size:20">things can appear
+as you arrive</pre> -->
 
 
         <!-- image + link: back to the main site -->
-        <a class="thing" href="../" style="--x:1180; --y:1380; --w:64" title="home">
+        <!-- <a class="thing" href="../" style="--x:1180; --y:1380; --w:64" title="home">
             <img class="pixel" src="../images/icons/Star.png" alt="home" style="width:100%">
-        </a>
+        </a> -->
 
         <!-- click + flipbook: each click shows the next frame -->
-        <div class="thing frames" data-play="none" data-click="grow" style="--x:660; --y:2050; --size:26">
+        <!-- <div class="thing frames" data-play="none" data-click="grow" style="--x:660; --y:2050; --size:26">
 <pre>
   .
   |
@@ -143,7 +144,7 @@ as you arrive</pre>
    |</pre>
         </div>
 
-        <pre class="thing" style="--x:640; --y:2260; --size:14">click the flower</pre>
+        <pre class="thing text" style="--x:640; --y:2260; --size:14">click the flower</pre> -->
 
     </main>
 
