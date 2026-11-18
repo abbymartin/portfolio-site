@@ -176,6 +176,24 @@ a.thing, [data-click] { cursor: pointer; }
     mask: var(--shape, none) center / 100% 100%;
 }
 
+/* ---------- parallax ----------
+   data-parallax="0.3" (world.js copies it into --parallax). The browser moves the
+   element in step with the scroll itself, so it stays smooth on phones. Same maths as
+   the JS fallback: exactly at its placed position in the middle of the screen. */
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        [data-parallax] {
+            animation: parallax linear both;
+            animation-timeline: view();
+        }
+    }
+}
+@keyframes parallax {
+    from { translate: 0 calc(var(--parallax, 0) * (50vh + 50%) * -1); }
+    to   { translate: 0 calc(var(--parallax, 0) * (50vh + 50%)); }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .drift { animation: none; }
     [data-reveal] { transition: none; }

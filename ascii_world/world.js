@@ -49,8 +49,11 @@ for (const el of document.querySelectorAll('[data-reveal]')) watcher.observe(el)
 // data-parallax="0.3": lags behind the scroll by 30% (feels further away).
 // Negative values move faster (feels closer). The element sits exactly at its
 // placed position when it is in the vertical middle of the screen.
+// Where the browser supports it, world.css runs this as a scroll-driven
+// animation, which stays smooth on phones; the code below is only the fallback.
 const movers = [...document.querySelectorAll('[data-parallax]')];
-if (movers.length && !calm) {
+for (const el of movers) el.style.setProperty('--parallax', el.dataset.parallax);
+if (movers.length && !calm && !CSS.supports('animation-timeline: view()')) {
     let queued = false;
     const update = () => {
         queued = false;
