@@ -51,8 +51,8 @@
 
         <!-- backdrop: strips stack top to bottom and set the world's height -->
         <div class="backdrop">
-            <img class="strip" src="images/water.png" width="1281" height="961" alt="blurry water background" style="--fade-bottom:289; --z:1">
-            <img class="strip" src="images/gradient1.png" width="1281" alt="" style="--overlap:289">
+            <img class="strip" src="images/water.webp" width="1280" height="960" alt="blurry water background" style="--fade-bottom:289; --z:1">
+            <img class="strip" src="images/gradient1.webp" width="1281" height="1703" alt="" style="--overlap:289">
             <div class="strip" style="--h:1100; background: linear-gradient(#3f9fca, #33635e); --overlap:200; --fade-top: 200"></div>
             <div class="strip" style="--h:800; background: linear-gradient(#33635e, #21483a); --overlap:200; --fade-top: 200"></div>
         </div>
@@ -74,8 +74,8 @@
                 <!-- group: move the heron, its ascii and its grain together with the outer --x/--y.
                      The inner pre's --x/--y are measured from the group's top-left.
                      grainy: grain over the whole group (text too); --shape keeps it off the transparent parts -->
-                <div class="thing grainy" data-parallax="0.15" style="--x:200; --y:320; --w:375; --z:1; --small-scale:1.6; --amount:0.6; --blend:multiply; --shape:url(images/heron1.png)">
-                    <img src="images/heron1.png" width="960" alt="flying heron">
+                <div class="thing grainy" data-parallax="0.15" style="--x:200; --y:320; --w:375; --z:1; --small-scale:1.6; --amount:0.6; --blend: multiply; --shape:url(images/heron1.webp)">
+                    <img src="images/heron1.webp" width="960" alt="flying heron">
             <pre class="thing" style="--x:38; --y:64; --size:12.5; --z:2; color:#e1deff; font-weight: 400">
 
                       +++++++= ----
@@ -85,7 +85,7 @@
           ----::::-----==    
           :::::::::::----::-=+  
                   ::::::----:--==  --
-             ..  :::::::- -::::-:::---
+                 :::::::- -::::-:::---
               ..::.::::::     ---::::::-
             ::: ..::: :::      -::::::::-\
            (: ::::/ :--:       -:::::::-
@@ -99,8 +99,8 @@
                 </div>
 
                 <!-- group: heron2 + its ascii + grain, moved together by the outer --x/--y -->
-                <div class="thing grainy" data-parallax="0.1" style="--x:900; --y:180; --w:320; --z:1; --small-scale:1.6; --amount:1; --blend:overlay; --shape:url(images/heron2.png)">
-                <img src="images/heron2.png" width="950" alt="flying heron">
+                <div class="thing grainy" data-parallax="0.1" style="--x:900; --y:180; --w:320; --z:1; --small-scale:1.6; --amount:0.6; --blend:soft-light; --shape:url(images/heron2.webp)">
+                <img src="images/heron2.webp" width="950" alt="flying heron">
                 <pre class="thing" style="--x:10; --y:55; --size:12; --z:2; color:#c5cff2; font-weight: 400">
         ..
                        ...-.
@@ -271,6 +271,7 @@ as you arrive</pre> -->
                 card.append(make('span', 'label', b.label));
                 if (b.cover) {
                     const img = make('img');
+                    img.loading = 'lazy';
                     img.src = b.cover;
                     img.alt = `cover of ${b.title}`;
                     img.onerror = () => img.remove();
