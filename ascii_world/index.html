@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Poppins:wght@400;700&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
 
     <link href="world.css" rel="stylesheet">
 </head>
@@ -36,6 +36,7 @@
                        add --shape:url(same.png) for cutouts so grain skips transparent areas
                        --blend:soft-light / multiply ... changes how the grain mixes in (default overlay)
     readable text      class="thing text" never goes below 14px (or --min:16px); not for ascii art
+    fonts              body text is Figtree, add class="heading" for Poppins, any <pre> without "text" is Fragment Mono
     bigger on phones   --small-scale:1.3 makes a thing (or a whole group) 30% bigger below 700px wide
     taller on phones   --stretch in world.css (2): below 700px all --y, strip heights, overlaps
                        and fades are doubled; things keep their size. Group ascii with its image.
@@ -57,7 +58,7 @@
         </div>
 
         <!-- plain text -->
-        <pre class="thing text" style="--x:80; --y:80; --size:27; --min:18px; color:#414a75">
+        <pre class="thing text heading" style="--x:80; --y:80; --size:27; --min:18px; color:#414a75">
 <strong>abby martin</strong>
 <a href="https://github.com/abbymartin">github</a>
 <a href="https://www.linkedin.com/in/abbyvmartin/">linkedin</a></pre>
