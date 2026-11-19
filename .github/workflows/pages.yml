@@ -1,13 +1,16 @@
 # Publishes the site from two branches at once:
 #   main                          -> www.abbymartin.net/
 #   ascii_world branch's folder   -> www.abbymartin.net/ascii/
-# Runs whenever either branch is pushed, or by hand from the Actions tab.
-# This file has to exist on both branches.
+# Runs whenever either branch is pushed, once a day (to refresh the Hardcover
+# books), or by hand from the Actions tab.
+# This file has to exist on both branches (the daily run uses main's copy).
 name: pages
 
 on:
   push:
     branches: [main, ascii_world]
+  schedule:
+    - cron: "0 9 * * *"
   workflow_dispatch:
 
 permissions:
@@ -41,6 +44,13 @@ jobs:
           mkdir site
           rsync -a --exclude .git --exclude .github --exclude .claude --exclude .vscode main/ site/
           cp -r ascii/ascii_world site/ascii
+
+      # books.json for the ascii page. if Hardcover is down, the page just shows no books
+      - name: Fetch Hardcover books
+        continue-on-error: true
+        env:
+          HARDCOVER_TOKEN: ${{ secrets.HARDCOVER_TOKEN }}
+        run: python3 ascii/scripts/hardcover.py site/ascii/books.json
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
