@@ -54,7 +54,8 @@
             <img class="strip" src="images/water.webp" width="1280" height="960" alt="blurry water background" style="--fade-bottom:289; --z:1">
             <img class="strip" src="images/gradient1.webp" width="1281" height="1703" alt="" style="--overlap:289">
             <div class="strip" style="--h:1100; background: linear-gradient(#3f9fca, #33635e); --overlap:200; --fade-top: 200"></div>
-            <div class="strip" style="--h:800; background: linear-gradient(#33635e, #21483a); --overlap:200; --fade-top: 200"></div>
+            <div class="strip" style="--h:800; background: linear-gradient(#33635e, #356e50); --overlap:200; --fade-top: 200"></div>
+            <div class="strip" style="--h:1000; background: linear-gradient(#356e50, #98b780); --overlap:200; --fade-top: 200"></div>
         </div>
 
         <!-- plain text -->
@@ -71,11 +72,11 @@
             <pre>-v-</pre>
         </div> -->
 
-                <!-- group: move the heron, its ascii and its grain together with the outer --x/--y.
-                     The inner pre's --x/--y are measured from the group's top-left.
-                     grainy: grain over the whole group (text too); --shape keeps it off the transparent parts -->
-                <div class="thing grainy" data-parallax="0.15" style="--x:200; --y:320; --w:375; --z:1; --small-scale:1.6; --amount:0.6; --blend: multiply; --shape:url(images/heron1.webp)">
-                    <img src="images/heron1.webp" width="960" alt="flying heron">
+        <!-- group: move the heron, its ascii and its grain together with the outer --x/--y.
+             The inner pre's --x/--y are measured from the group's top-left.
+             grainy: grain over the whole group (text too); --shape keeps it off the transparent parts -->
+        <div class="thing grainy" data-parallax="0.15" style="--x:200; --y:320; --w:375; --z:1; --small-scale:1.6; --amount:0.6; --blend: multiply; --shape:url(images/heron1.webp)">
+            <img src="images/heron1.webp" width="960" alt="flying heron">
             <pre class="thing" style="--x:38; --y:64; --size:12.5; --z:2; color:#e1deff; font-weight: 400">
 
                       +++++++= ----
@@ -96,15 +97,15 @@
                    :::/
                   :::
 </pre>
-                </div>
+        </div>
 
-                <!-- group: heron2 + its ascii + grain, moved together by the outer --x/--y -->
-                <div class="thing grainy" data-parallax="0.1" style="--x:900; --y:180; --w:320; --z:1; --small-scale:1.6; --amount:0.6; --blend:soft-light; --shape:url(images/heron2.webp)">
-                <img src="images/heron2.webp" width="950" alt="flying heron">
-                <pre class="thing" style="--x:10; --y:55; --size:12; --z:2; color:#c5cff2; font-weight: 400">
-        ..
+        <!-- group: heron2 + its ascii + grain, moved together by the outer --x/--y -->
+        <div class="thing grainy" data-parallax="0.1" style="--x:900; --y:180; --w:320; --z:1; --small-scale:1.6; --amount:0.6; --blend:soft-light; --shape:url(images/heron2.webp)">
+            <img src="images/heron2.webp" width="950" alt="flying heron">
+            <pre class="thing" style="--x:10; --y:55; --size:12; --z:2; color:#c5cff2; font-weight: 400">
+          
                        ...-.
-           ..         ..-----..
+                      ..-----..
                     .----::::
                   .-----:::::
                  -:::-:::::::
@@ -115,141 +116,80 @@
       ---------
       ..--.-.
        .-
-                </pre>
-                </div>
-
-
-
-<pre class="thing" style="--x:750; --y:2650; --size:12.5; --z:2; color:#e4f5f3; font-weight: 500">
-                                                  ;; ;;;
-                           ;;;       ;;:;;      ;;;;;;;;;;
-                           ;            ;;::;;;  ;:;;;;;;;
-                          ;;               ;;;;;; ;;;;;;;;         ;;
-                  ;;     ;;;                 ;;;;;;;;;;;;;;     ;;;:;;
-                 ;:;    ;; ;                   ;;;;;;;::;;;;;;;;;;;::;;;;:;
-                ;:::    ;;:;                    ;;;;;;;;;;;;;;;;;;:;;;; ;:
-                ;;::;;  ;;:;                       ;;;;;:;;;;::;;:;;;;  ;
-         ;;;;;; ;;;;;;; ;;;;                      ;;;;;;;;;;;;;;:;;:;;;;;;
-        ;;;;;;;;;;;;;;;;;;;;                      ;;;;;;;;:;;;;;;;;;;;;;;;;;;;;
-       ;;;;;;;;; ;;;;;;;;;;;;                      ;;; ;;;;;;;:;;;;;;;;;;:   ;;
-      ;;;;;        ;;;;;;;; ;                      ;;;;;;;;;; ::;     ;:;:    ;
-     ;;;;;;;;;      ;; ;; ;;                        ;;;;     ;:;;;    ;;;     ;
-                     ;  ;;                         ;;     ;;;;;;;;   ;;
-                          ;                  ;   ;;     ;    ;;
-         ;;            ;;   ;        ; ;;;;;; ;;;      ;;;; ;;  ;     ;     ;;
-      ;;                  ;; ;;; ;  ; ;;;;;;;          ;;; ;    ;;;;;;;::;:::;
-                            ;;;;;;;    ;;;             ; ;;    ;;;;;;;;;;;::
-                               ;;;;;    ;;            ;;;    ;:::;;;;;;;;;
-                                 ;:,    ,::          ;;;    ;;::;;;;;;;
-                                  ;:;  ;,;      ;;; ;;;;::,...::::;;;;;;
-                                   ;;  :;        ;;;:::,.,...,:.:;;;;;;;;;;
-                                   ;: ;:        ;;;;;;;;;;;::,,:;; ;:::;;;;;;;
-                                   ;:;;::;    ;;;   ;;:;;;;;:;;;;;;;;;;;;;;;;;;
-                                   ;::::    ;;    ;;;;::;;;;;;;;; ;;; ;
-                               ;;;;;:,:;;;;;   ;;;;;;;;::;;;::
-                              ;;;;;;,,:;;;;;;;      ;;;;::;;;;
-                             ;:;;;;:::;::,,::::        ;::;;::;
-                             ;,;   ;:::  ;,:::,;        ;;;;;;;
-                            ;;:;   ;..;   :,,:,;          ;:;;
-                  ;;       ;;      :..     ;,,,;           ;;;
-                   ::;             ,..      ::;;           ;;
-                   ;,,;            ,,.     ;:;::            ;
-                    :,,:           ,..    ;  :,:
-                     ,,,:          ,..      :,,;                   ;;;::::;
-                     :,,,:         :..;    :,,,;              ;:::,,,,:;
-     ;               ;,:,,:        ,..;   ;,,.,;          ;::,,,,,:;
-     ;;:,,::;;        :,,,,;       ,..;   ,,,.,;       ;:,,,,,,:;
-         ;:,,,,::;;   ;,,,,:;      ...;  ;,,.,,     ;:,,:,,,:;
-            ;:,,,,,,:; :,:,,:     ;...;  ,,,.,,  ;:,,::,,,;
-              ;:,,,,,,,:,,:,:;    ;...; :,,,.,:;,,,::,.:
-                ;:,,,,,,,,:,,:;   ;...  ,.,,,,,,,:,,,,;
-                   ;,,,,:,,:,::   ;... :,,,,,,,::,,,;
-                     ;:,,,,:,,:;  ;,.. ,.,,,,::,,,:;
-                       ;::,::,::; ;,..;,,,,,::,,::;   ;
-                         ;,,:,,::;:,..:,,,,::,,,:   ;,;
-                          :,::,::,,,..:,,,::,,,:   ;,,;
-                          :,::,,:,,..,,,:::,,::   ;,,,;
-                          ;:,::,:,..:,,,::,,,::   :,,,
-                           :,::,,:.::,,::,,,:,:  :,,,:
 </pre>
-
-<pre class="thing" style="--x:150; --y:2850; --size:12.5; --z:2; color:#e4f5f3; font-weight: 500">
-                                  .,:,,..
-                             .,,,:::::,.. .,
-                             ,..,:::::,,,,,,:..,,,,.
-                          ......,,:::;:,:,:,:;.,,.,.
-                         ,,,:,.,::::::;++;;::;:..,:.
-                         ,.,:,,;,..,.::;++*++:.,:::.
-                         ::,...,,,...:,;***;,:;,,;:
-                         ,,.....,::,,::;***..,:;:;;.
-                     .... ,......:;::,,:+*+:,,,;;;+,
-                   ..,...,,.,..,,,;;::,:;;+*+:,:+;+,
-                 ,..,::,,,::,,.,,,:+;;;;;;;;++;;+++.
-                  ....,..,,..::::,,:;;;;+++:;;+;++,
-                    .,:.,,:..,+:;::;;;+++++;:;;;:.
-                          .,,,:;:;;++++;;;;:,,..
-                              ,:::;;;;:::,.:,
-                 .              ...,,...   ,:.
-                 .:,.                       ,:
-                  .:;:.                     .,.
-                   .:;;:,.                   .,
-                    .::;;;,                  .:
-                     .::;;;;.                .,.
-                       ,:;+;;,                ,.             ..
-                        .:++;;;,.      ..     ,.            .:,
-                         .:;++;;;:.    .:     ,.          .,::,
-                           ,;;;;:;;,   .,     ,.         ,::::.
-                            .;;;++++,  .,.    ,.       .:;:::.
-                             .;::++++:. ,,   .,.     .,:::::,
-                               ::;+++++,.:   .:     :::::::,
-                                ,:++++++,:   .:   .:::::::.
-                                 .:+*+*+::.  .,  .;:::::,
-                                  ;:****:::. ,, .,;;;;:,
-                                  :;;***;:;,.,:;;,;;;:.
-                                   ;;+**;:;:.;+;;;;;;.
-                                    :;+*;:;;,;++;;;;.
-                                     .;*;:+:,;;;;;;.
-                                      .;;;;,:;;;;;.
-                                       ;:;;,;;;;;,
-                                       :;;:,;;;;:
-                                       ,:;,:;;;;.
-                                       ..,.,,,,.
-</pre>
+        </div>
 
         <!-- books: filled from books.json, which the deploy builds from Hardcover
              (scripts/hardcover.py). Missing books are left out; with none it stays empty. -->
-        <div class="thing books anchor-right" id="books" style="--x:1370; --y:3600; color:#e4f5f3"></div>
+        <div class="thing books anchor-right" id="books" style="--x:1370; --y:3000; color:#e4f5f3"></div>
 
-        <!-- reveal: fades in when it scrolls into view -->
-        <!-- <pre class="thing text" data-reveal style="--x:160; --y:1250; --size:20">things can appear
-as you arrive</pre> -->
+        <div class="thing grainy" data-parallax="0.15" style="--x:200; --y:4200; --w:405; --z:1; --small-scale:1.75; --amount:0.6; --blend: multiply; --shape:url(images/flower_cutout.webp); rotate: 5deg">
+            <pre class="thing" style="--x:158; --y:43; --size:6.3; --z:1; color:white; background-color: blue; font-weight: 400; rotate: -5deg">
+  ----+
+ +=-:==#
+ =====+*%
+ ---==**@%
+.---:-+%@%
+.:-::-=
+:::-
+.:+
+ 
+</pre>
 
-
-        <!-- image + link: back to the main site -->
-        <!-- <a class="thing" href="../" style="--x:1180; --y:1380; --w:64" title="home">
-            <img class="pixel" src="../images/icons/Star.png" alt="home" style="width:100%">
-        </a> -->
-
-        <!-- click + flipbook: each click shows the next frame -->
-        <!-- <div class="thing frames" data-play="none" data-click="grow" style="--x:660; --y:2050; --size:26">
-<pre>
-  .
-  |
- \|/</pre>
-<pre>
-  o
-  |
- \|/
-  |</pre>
-<pre>
- .-.-.
-( (@) )
- '-|-'
-  \|/
-   |</pre>
+            <pre class="thing" style="--x:216; --y:310; --size:6.3; --z:1; color:white; background-color: blue; font-weight: 400; rotate: -5deg">
+        %%*
+    ###+++**##
+  %#+=--=+***###**###%
+ %=-:::++*+==-*###**####+**##
+ *-:::-++=-::+**+======-+*##%%%%
+#=::::===-:-**+++=-::=*#######% %%%
+#=:::-==::-**++=-::-*####**++#%%%%%%
+#-:::---::+++++=::-*****+==+*%#%#%%%%%
+ +:::::::-=++=-:::=====--:-==+**++*#####
+ +::::::::-=-::::::::::::::::-------=++**
+  -:::::::::::-++**                 ::---=+
+   -::::                                   #
+</pre>
+            <!-- relative + z-index lifts the image above the ascii (z 1); the grain (z 100) stays on top -->
+            <img src="images/flower_cutout.webp" alt="flower illustration" style="position:relative; z-index:2">
         </div>
 
-        <pre class="thing text" style="--x:640; --y:2260; --size:14">click the flower</pre> -->
+        <div class="thing grainy" data-parallax="0.15" style="--x:820; --y:3800; --w:405; --z:1; --small-scale:1.75; --amount:0.6; --blend: multiply; --shape:url(images/flower_cutout2.webp);">
+            <pre class="thing" style="--x:210; --y:166; --size:6.3; --z:1; color:white; background-color: blue; font-weight: 400">
+      ---+=
+     ::---=
+   ::----=     =
+ =-=:---== ===---
+ --=-------===-=-
+  -   -:-::---:::--=
+       :=--=====-===
+       #*=--=====+=+
+     #+-::--=-::
+   #+=::--=-:::
+   #+--=--::
+    +=--
+</pre>
+            <pre class="thing" style="--x:52; --y:430; --size:6.3; --z:1; color:white; background-color: blue; font-weight: 400">                       #
+ ------*+
+     -::-=*
+      =:::-
+       *=+=--
+        *#**+
+         %##***
+           ###*++
+            %****#*+
+               #######*
+                %#%#####**
+                   ###*#*****+
+                     ##%####**++++++
+                         %##**++*++++++=+=    :
+                           **++===++=++++====-::-
+                              ---=====-----=+=++=
+                                   =::::=+++**+
+</pre>
+            <!-- relative + z-index lifts the image above the ascii (z 1); the grain (z 100) stays on top -->
+            <img src="images/flower_cutout2.webp" alt="flower illustration" style="position:relative; z-index:2">
+        </div>
 
     </main>
 

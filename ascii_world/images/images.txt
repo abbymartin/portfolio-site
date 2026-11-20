@@ -5,3 +5,7 @@ water: https://commons.wikimedia.org/wiki/File:Folded_page_of_sky_and_water_-_pa
 flower ascii:
 https://commons.wikimedia.org/wiki/File:Flower_illustration_by_Peter_Brown_1782.jpg
 https://commons.wikimedia.org/wiki/File:Vintage_Flower_illustration_by_Pierre-Joseph_Redout%C3%A9,_digitally_enhanced_by_rawpixel_06.jpg
+
+cutout flowers:
+https://upload.wikimedia.org/wikipedia/commons/b/be/The_Botanical_magazine%2C_or%2C_Flower-garden_displayed_%28Plate_188%29_%288559502069%29.jpg
+https://commons.wikimedia.org/wiki/File:The_Botanical_magazine,_or,_Flower-garden_displayed_(Plate_214)_(8560627824).jpg
