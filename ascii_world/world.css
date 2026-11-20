@@ -153,17 +153,27 @@ a.thing, [data-click] { cursor: pointer; }
 /* ---------- books (index.html fills #books from books.json) ----------
    One row of cards, right-aligned (use with anchor-right). On phones the row spans
    the full width and is centred (ignoring --x), with bigger cards: three across
-   (3 x 330 + 2 x 60 gap = 1110, inside the 1440 width), or 480 each when there are two. */
+   (3 x 400 + 2 x 60 gap = 1320, leaving 60 each side of the 1440 width),
+   or 620 each when there are two (2 x 620 + 60 = 1300).
+   Each card is a subgrid over the row's 4 shared rows (label, cover, title, author),
+   so a label that wraps pushes every card's cover down, keeping the covers level. */
 
-.books { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: calc(60 * var(--u)); --card: 200; }
-.books .book { display: flex; flex-direction: column; gap: 4px; width: calc(var(--card) * var(--u)); }
-.books .book img { width: 100%; height: auto; display: block; margin: 4px 0; }
-.books .label, .books .author { font-size: max(calc(13 * var(--u)), 10px); opacity: 0.75; }
-.books .title { font-weight: 500; font-size: max(calc(16 * var(--u)), 12px); line-height: 1.2; }
+.books {
+    display: grid; grid-auto-flow: column; grid-auto-columns: calc(var(--card) * var(--u));
+    grid-template-rows: repeat(4, auto); justify-content: end;
+    gap: 5px calc(var(--gap) * var(--u)); --card: 220; --gap: 66;
+}
+.books .book { display: grid; grid-row: span 4; grid-template-rows: subgrid; }
+.books .label { grid-row: 1; align-self: end; }   /* labels share a bottom edge */
+.books .book img { grid-row: 2; width: 100%; height: auto; display: block; margin: 5px 0; }
+.books .title { grid-row: 3; }
+.books .author { grid-row: 4; }
+.books .label, .books .author { font-size: max(calc(14.3 * var(--u)), 12px); opacity: 0.75; }
+.books .title { font-weight: 500; font-size: max(calc(17.6 * var(--u)), 14.5px); line-height: 1.2; }
 
 @media (max-width: 700px) {
-    .thing.books { --card: 330; left: 0; right: auto; width: 100%; justify-content: center; }
-    .books:has(> .book:nth-child(2):last-child) { --card: 480; }
+    .thing.books { --card: 400; --gap: 60; left: 0; right: auto; width: 100%; justify-content: center; }
+    .books:has(> .book:nth-child(2):last-child) { --card: 620; }
 }
 
 /* ---------- reveal: world.js adds .in-view while on screen ----------
